@@ -101,8 +101,6 @@ void initialise() {
     glEnable(GL_BLEND);
 
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-   
-    // Initialize Game Objects
     
     // Luigi
     g_game_state.player = new Entity();
@@ -123,7 +121,6 @@ void initialise() {
     float y_pos = 1.5f;
     
     for (int i = 0; i < PLATFORM_COUNT; i++) {
-        // platforms 6, 7, 8
         if (i > 5 && i < 9) {
             g_game_state.platforms[i].textureID = grassPlatformTextureID;
             g_game_state.platforms[i].position = glm::vec3(x_pos_base, -3.25, 0);
