@@ -76,7 +76,7 @@ void Entity::CheckCollisionsX(Entity *objects, int objectCount)
             else if (velocity.x < 0) {
                 position.x += penetrationX;
                 velocity.x = 0;
-                collidedLeft = true; // something here for future assingment
+                collidedLeft = true; 
             }
         }
     }
@@ -95,11 +95,11 @@ void Entity::update(float deltaTime, Entity *platforms, int platformCount)
     velocity.x = movement.x * speed;
     velocity += acceleration * deltaTime;
     
-    position.y += velocity.y * deltaTime;           // Move on Y
-    CheckCollisionsY(platforms, platformCount);     // Fix if needed
+    position.y += velocity.y * deltaTime;
+    CheckCollisionsY(platforms, platformCount);
 
-    position.x += velocity.x * deltaTime;           // Move on X
-    CheckCollisionsX(platforms, platformCount);     // Fix if needed
+    position.x += velocity.x * deltaTime;
+    CheckCollisionsX(platforms, platformCount);
     
     g_model_matrix = glm::mat4(1.0f);
     g_model_matrix = glm::translate(g_model_matrix, position);
